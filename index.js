@@ -23,10 +23,10 @@ app.get("/", (request, response) => {
     }
 });
 
-app.post("/post", async(request, response) => {
+app.post("/post", (request, response) => {
     if (response.statusCode === 200) {
         var data = request.body;
-        await CartItems.forEach((e) => {
+        CartItems.forEach((e) => {
             if (e.id === data.id) {
                 var id = data.id;
                 addToCart[data.id] = e;
